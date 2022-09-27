@@ -33,3 +33,18 @@ document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
 document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
 document.write(`<p><label>Years:</label> ${years}</p>`);
 document.write(`<p><label>Future Value:</label> ${futureValue.toFixed(2)}</p>`);
+
+// calulate future value - Monthly interest
+let futurevalue2 = investment;
+let months = 12 * years;
+let rate2 = rate / 12;
+for (let i=1; i<=months; i++){
+        futurevalue2 += futurevalue2 * rate2 / 100;
+    }
+
+// display monthly results
+document.write(`<p><h2>Future Value With monthly Interest</h2></p>`);
+document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
+document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
+document.write(`<p><label>Years:</label> ${years}</p>`);
+document.write(`<p><label>Future Value:</label> ${futurevalue2.toFixed(2)}</p>`);
